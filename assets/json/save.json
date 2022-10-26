@@ -1,0 +1,444 @@
+{
+  "move": [{
+      "moveNumber": 1,
+      "turn": "b",
+      "src": {
+        "type": "帥",
+        "color": "b"
+      },
+      "dst": "9-5",
+      "type": "place",
+      "dstTier": 1,
+      "dstPiece": null
+    },
+    {
+      "moveNumber": 2,
+      "turn": "w",
+      "src": {
+        "type": "帥",
+        "color": "w"
+      },
+      "dst": "1-5",
+      "type": "place",
+      "dstTier": 1,
+      "dstPiece": null
+    },
+    {
+      "moveNumber": 3,
+      "turn": "b",
+      "src": {
+        "type": "兵",
+        "color": "b"
+      },
+      "dst": "7-5",
+      "type": "place",
+      "dstTier": 1,
+      "dstPiece": null
+    },
+    {
+      "moveNumber": 4,
+      "turn": "w",
+      "src": null,
+      "dst": null,
+      "type": "ready"
+    },
+    {
+      "moveNumber": 5,
+      "turn": "b",
+      "src": null,
+      "dst": null,
+      "type": "ready"
+    },
+    {
+      "moveNumber": 6,
+      "turn": "w",
+      "src": {
+        "type": "兵",
+        "color": "w"
+      },
+      "dst": "6-5",
+      "type": "place",
+      "dstTier": 1,
+      "dstPiece": null
+    },
+    {
+      "moveNumber": 7,
+      "turn": "b",
+      "src": {
+        "type": "弓",
+        "color": "b"
+      },
+      "dst": "6-5",
+      "type": "place",
+      "dstTier": 1,
+      "dstPiece": {
+        "type": "兵",
+        "color": "w"
+      }
+    },
+    {
+      "moveNumber": 8,
+      "turn": "w",
+      "src": {
+        "type": "小",
+        "color": "w"
+      },
+      "dst": "5-6",
+      "type": "place",
+      "dstTier": 1,
+      "dstPiece": null
+    },
+    {
+      "moveNumber": 9,
+      "turn": "b",
+      "src": {
+        "type": "弓",
+        "color": "b"
+      },
+      "dst": "5-6",
+      "type": "place",
+      "dstTier": 1,
+      "dstPiece": {
+        "type": "小",
+        "color": "w"
+      }
+    },
+    {
+      "moveNumber": 10,
+      "turn": "w",
+      "src": {
+        "type": "忍",
+        "color": "w"
+      },
+      "dst": "5-6",
+      "type": "place",
+      "dstTier": 2,
+      "dstPiece": {
+        "type": "弓",
+        "color": "b"
+      }
+    },
+    {
+      "moveNumber": 11,
+      "turn": "b",
+      "src": {
+        "type": "忍",
+        "color": "b"
+      },
+      "dst": "6-5",
+      "type": "place",
+      "dstTier": 2,
+      "dstPiece": {
+        "type": "弓",
+        "color": "b"
+      }
+    },
+    {
+      "moveNumber": 12,
+      "turn": "w",
+      "src": "5-6",
+      "dst": "6-5",
+      "type": "attack",
+      "srcTier": 3,
+      "srcPiece": {
+        "type": "忍",
+        "color": "w"
+      },
+      "dstTier": 3,
+      "dstPiece": {
+        "type": "忍",
+        "color": "b"
+      }
+    },
+    {
+      "moveNumber": 13,
+      "turn": "b",
+      "src": "7-5",
+      "dst": "6-5",
+      "type": "attack",
+      "srcTier": 1,
+      "srcPiece": {
+        "type": "兵",
+        "color": "b"
+      },
+      "dstTier": 3,
+      "dstPiece": {
+        "type": "忍",
+        "color": "w"
+      }
+    },
+    {
+      "moveNumber": 14,
+      "turn": "w",
+      "src": {
+        "type": "砲",
+        "color": "w"
+      },
+      "dst": "6-6",
+      "type": "place",
+      "dstTier": 1,
+      "dstPiece": null
+    },
+    {
+      "moveNumber": 15,
+      "turn": "b",
+      "src": {
+        "type": "大",
+        "color": "b"
+      },
+      "dst": "5-7",
+      "type": "place",
+      "dstTier": 1,
+      "dstPiece": null
+    },
+    {
+      "moveNumber": 16,
+      "turn": "w",
+      "src": "6-6",
+      "dst": "6-5",
+      "type": "attack",
+      "srcTier": 1,
+      "srcPiece": {
+        "type": "砲",
+        "color": "w"
+      },
+      "dstTier": 3,
+      "dstPiece": {
+        "type": "兵",
+        "color": "b"
+      }
+    },
+    {
+      "moveNumber": 17,
+      "turn": "b",
+      "src": {
+        "type": "兵",
+        "color": "b"
+      },
+      "dst": "7-5",
+      "type": "place",
+      "dstTier": 1,
+      "dstPiece": null
+    },
+    {
+      "moveNumber": 18,
+      "turn": "w",
+      "src": "6-5",
+      "dst": "7-5",
+      "type": "stack",
+      "srcTier": 3,
+      "srcPiece": {
+        "type": "砲",
+        "color": "w"
+      },
+      "dstTier": 1,
+      "dstPiece": {
+        "type": "兵",
+        "color": "b"
+      }
+    },
+    {
+      "moveNumber": 19,
+      "turn": "b",
+      "src": {
+        "type": "忍",
+        "color": "b"
+      },
+      "dst": "7-5",
+      "type": "place",
+      "dstTier": 2,
+      "dstPiece": {
+        "type": "砲",
+        "color": "w"
+      }
+    },
+    {
+      "moveNumber": 20,
+      "turn": "w",
+      "src": {
+        "type": "弓",
+        "color": "w"
+      },
+      "dst": "6-5",
+      "type": "place",
+      "dstTier": 2,
+      "dstPiece": {
+        "type": "弓",
+        "color": "b"
+      }
+    },
+    {
+      "moveNumber": 21,
+      "turn": "b",
+      "src": "9-5",
+      "dst": "8-4",
+      "type": "move",
+      "srcTier": 1,
+      "srcPiece": {
+        "type": "帥",
+        "color": "b"
+      },
+      "dstTier": 1,
+      "dstPiece": null
+    },
+    {
+      "moveNumber": 22,
+      "turn": "w",
+      "src": {
+        "type": "馬",
+        "color": "w"
+      },
+      "dst": "6-3",
+      "type": "place",
+      "dstTier": 1,
+      "dstPiece": null
+    },
+    {
+      "moveNumber": 23,
+      "turn": "b",
+      "src": {
+        "type": "砲",
+        "color": "b"
+      },
+      "dst": "6-3",
+      "type": "place",
+      "dstTier": 1,
+      "dstPiece": {
+        "type": "馬",
+        "color": "w"
+      }
+    },
+    {
+      "moveNumber": 24,
+      "turn": "w",
+      "src": {
+        "type": "大",
+        "color": "w"
+      },
+      "dst": "6-3",
+      "type": "place",
+      "dstTier": 2,
+      "dstPiece": {
+        "type": "砲",
+        "color": "b"
+      }
+    },
+    {
+      "moveNumber": 25,
+      "turn": "b",
+      "src": "8-4",
+      "dst": "8-5",
+      "type": "move",
+      "srcTier": 1,
+      "srcPiece": {
+        "type": "帥",
+        "color": "b"
+      },
+      "dstTier": 1,
+      "dstPiece": null
+    },
+    {
+      "moveNumber": 26,
+      "turn": "w",
+      "src": {
+        "type": "馬",
+        "color": "w"
+      },
+      "dst": "6-6",
+      "type": "place",
+      "dstTier": 1,
+      "dstPiece": null
+    },
+    {
+      "moveNumber": 27,
+      "turn": "b",
+      "src": {
+        "type": "大",
+        "color": "b"
+      },
+      "dst": "6-6",
+      "type": "place",
+      "dstTier": 1,
+      "dstPiece": {
+        "type": "馬",
+        "color": "w"
+      }
+    },
+    {
+      "moveNumber": 28,
+      "turn": "w",
+      "src": {
+        "type": "謀",
+        "color": "w"
+      },
+      "dst": "5-6",
+      "type": "place",
+      "dstTier": 2,
+      "dstPiece": {
+        "type": "弓",
+        "color": "b"
+      }
+    },
+    {
+      "moveNumber": 29,
+      "turn": "b",
+      "src": "8-5",
+      "dst": "7-6",
+      "type": "move",
+      "srcTier": 1,
+      "srcPiece": {
+        "type": "帥",
+        "color": "b"
+      },
+      "dstTier": 1,
+      "dstPiece": null
+    },
+    {
+      "moveNumber": 30,
+      "turn": "w",
+      "src": {
+        "type": "弓",
+        "color": "w"
+      },
+      "dst": "5-7",
+      "type": "place",
+      "dstTier": 1,
+      "dstPiece": {
+        "type": "大",
+        "color": "b"
+      }
+    },
+    {
+      "moveNumber": 31,
+      "turn": "b",
+      "src": "6-6",
+      "dst": "5-7",
+      "type": "attack",
+      "srcTier": 2,
+      "srcPiece": {
+        "type": "大",
+        "color": "b"
+      },
+      "dstTier": 2,
+      "dstPiece": {
+        "type": "弓",
+        "color": "w"
+      }
+    },
+    {
+      "moveNumber": 32,
+      "turn": "w",
+      "src": {
+        "type": "大",
+        "color": "w"
+      },
+      "dst": "5-7",
+      "type": "place",
+      "dstTier": 2,
+      "dstPiece": {
+        "type": "大",
+        "color": "b"
+      }
+    }
+  ]
+}

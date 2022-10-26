@@ -1,0 +1,1 @@
+This assets use as external resources.

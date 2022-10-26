@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<title>PicInfiniti</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- w3schools -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<!-- Goohle Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+<!-- Bootstarp -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<!-- icon pack-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="icon" href="/assets/img/blackjinja.png" type="image/gif">
+<link rel="stylesheet" href="/assets/css/style.css">
+<style>
+  .bgimg {
+    background-image: url('/assets/img/abc.jpg');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+  }
+
+  body {
+    font-family: "Lato", sans-serif;
+    transition: background-color .5s;
+  }
+
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  #main {
+    transition: margin-left .5s;
+    padding: 16px;
+  }
+
+  @media screen and (max-height: 450px) {
+    .sidenav {
+      padding-top: 15px;
+    }
+
+    .sidenav a {
+      font-size: 18px;
+    }
+  }
+
+  .logo label {
+    background-color: white;
+    width: 60px;
+    height: 60px;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 60px;
+    font-size: 30px;
+    margin-top: 5px;
+    margin-left: 10px;
+    font-weight: bold;
+    color: black;
+    border: 1px solid #000000;
+    border-radius: 50px;
+    outline: 10px black solid;
+    outline-offset: -10px;
+    box-shadow: 0px 0px 10px 5px rgba(255, 0, 0, 0.733);
+  }
+
+  .logo label:hover {
+    outline: 10px #aaa8a8 solid;
+    box-shadow: 0px 0px 10px 5px rgb(0, 85, 7);
+    cursor: crosshair;
+  }
+
+  #gungi label {
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    margin-left: 10px;
+    font-weight: bold;
+    color: white;
+    border: 1px solid white;
+    border-radius: 20px;
+    outline: 5px white solid;
+    outline-offset: -5px;
+  }
+
+  .titr {
+    text-align: justify;
+    text-justify: inter-word;
+    margin-top: 10vh;
+    width: 50vw;
+    color: black;
+    background-color: rgba(235, 235, 235, 0.85);
+    border-radius: 40px 5px 40px 5px;
+    padding: 20px;
+    -webkit-box-shadow: 0px 0px 5px 5px rgba(255, 119, 0, 0.576);
+            box-shadow: 0px 0px 5px 5px rgba(255, 119, 0, 0.576);
+  }
+  
+  .titr h3:nth-child(3) {
+    text-align: left;
+    padding-left: 3vw;
+    padding-top: 20px;
+    color: #034315;
+  }
+</style>
+<script src="/assets/js/moment.min.js"></script>
+<script src="/assets/js/moment-jalaali.js"></script>
+
+<body id="pay">
+  <div id="main" class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+    <div class="w3-display-topleft w3-padding-large logo">
+      <label type="text" name="帥" onclick="openNav()">帥</label>
+    </div>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#">About</a>
+      <a href="/views/webrtc.html">WebRTC</a>
+      <a id="gungi" href="/views/gungi.html">Gungi<label type="text" name="帥" onclick="openNav()">帥</label></a>
+      <a href="https://www.chiark.greenend.org.uk/~sgtatham/puzzles/" target="blank">Games</a>
+      <a href="/views/gaming_room.html" target="blank">Gaming Room</a>
+      <a href="#">Contact</a>
+    </div>
+    <div id="Clock" class="clock"></div>
+    <div>
+      <span class='date right' id='jdate'></span>
+    </div>
+
+
+    <div class="titr" dir="rtl">
+      <h3>سلام و درود خدمت تمام پارسی زبانان جهان</h3>
+      <h3 class="w3-animate-top">
+        <br>
+        به اطلاعتون می‌رسونم که لینک زرین‌پال به دلایل مشخصی از کار افتاده و تا اطلاع بعدی، 
+        دوستان می‌تونن از طریق کارت زیر از دوره‌ها قدردانی کنند.
+      </h3>
+      <h3>
+        "در پناه حق"
+      </h3>
+      <hr class="w3-border-black" style="margin:auto;width:40%">
+      <p class="w3-large w3-center">6104-3378-9586-0748</p>
+      <hr class="w3-border-black" style="margin:auto;width:60%">
+      <p class="w3-large w3-center">محمد جواد مقدس مهر</p>
+    </div>
+    <div class="bottom-right">
+      <a data-toggle="tooltip" href="http://www.picinfiniti.ir/" title="Jinja"><img src="/assets/img/jinjaw.png"
+          class="aparat"></a>
+      <a data-toggle="tooltip" href="https://www.aparat.com/picinfiniti" title="aparat"><img
+          src="/assets/img/aparat.png" class="aparat"></a>
+      <a data-toggle="tooltip" href="https://ponisha.ir/profile/picinfiniti" title="ponisha"><img
+          src="/assets/img/ponisha.png" class="aparat"></a>
+      <a data-toggle="tooltip" href="https://www.youtube.com/channel/UCIGxgFWq5aVWli12Rp3MTFA" title="youtube"><img
+          src="/assets/img/youtube.png" class="aparat"></a>
+      <a data-toggle="tooltip" href="https://www.instagram.com/picinfiniti/" title="instagram"><img
+          src="/assets/img/instagram.png" class="aparat"></a>
+      <a data-toggle="tooltip" href="https://wa.me/message/4SJC3MRVFRCHB1" title="whatsapp: +989361853616"><img
+          src="/assets/img/whatsapp.png" class="aparat"></a>
+      <a data-toggle="tooltip" href="https://t.me/picinfiniti" title="telegram"><img src="/assets/img/telegram.png"
+          class="aparat"></a>
+      <a data-toggle="tooltip" href="/views/pay.html" title="قدردانی"><img src="/assets/img/zarin.png"
+          class="aparat"></a>
+    </div>
+    <div class="bottom-left">
+      <p>.Powered by <a href="http://picinfiniti.net/">PicInfiniti.</a></p>
+    </div>
+  </div>
+
+</body>
+<script>
+  $(document).ready(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+
+  function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('Clock').innerHTML =
+      h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+  }
+
+  function checkTime(i) {
+    if (10 > i) {
+      i = "0" + i
+    };
+    return i;
+  }
+  startTime()
+
+  var d = new Date();
+  var weekday = new Array(7);
+  weekday[0] = "Sun";
+  weekday[1] = "Mon";
+  weekday[2] = "Tue";
+  weekday[3] = "Wed";
+  weekday[4] = "Thu";
+  weekday[5] = "Fri";
+  weekday[6] = "Sat";
+
+  var month = new Array(12);
+  month[0] = "Far";
+  month[1] = "Ord";
+  month[2] = "Kho";
+  month[3] = "Tir";
+  month[4] = "Mor";
+  month[5] = "Sha";
+  month[6] = "Meh";
+  month[7] = "Aba";
+  month[8] = "Aza";
+  month[9] = "Dey";
+  month[10] = "Bah";
+  month[11] = "Esf";
+
+  var n = weekday[d.getDay()];
+  var Moment = moment()
+
+  var DATE = n + '-' + Moment.jDate() + '-' + month[Moment.jMonth()] + '-' + Moment.jYear()
+  $('#jdate').text(DATE);
+</script>
+<script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+  }
+
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+    document.body.style.backgroundColor = "white";
+  }
+</script>
+
+</html>

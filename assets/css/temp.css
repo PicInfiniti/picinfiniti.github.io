@@ -1,0 +1,51 @@
+body,
+h1 {
+  font-family: "Raleway", sans-serif
+}
+
+body,
+html {
+  height: 100%
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  color: goldenrod;
+}
+.right{
+  float:right;
+}
+
+.date {
+  color:white;
+  text-align: right;
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+a {
+  color: cyan;
+}
+.clock {
+  color: white;
+  text-align: center;
+  font-size: 20px;
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+}
+.social{
+  font-size: 20px;
+  color: white;
+}
+.aparat{
+  width: 20px;
+}
+.fa-youtube{
+  color: darkred;
+}
