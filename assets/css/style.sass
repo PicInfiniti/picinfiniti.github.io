@@ -1,17 +1,26 @@
 html 
   height: 100%
+  margin: 0
+  padding: 0
+  font-weight: normal
 
-#home
+body
   height: 100%
   font-family: "Raleway", sans-serif
+  font-family: "Lato", sans-serif
+  font-weight: normal
+  transition: background-color .5s
+  margin: 0
+  padding: 0
   h1 
     font-family: "Raleway", sans-serif
 
   .bottom-left 
     position: absolute
-    bottom: 8px
-    left: 16px
+    bottom: 1vh
+    left: 1vw
     color: goldenrod
+    font-size: 1vw
     a 
       color: cyan
 
@@ -21,32 +30,40 @@ html
 
   .date 
     color: white
-    text-align: right
-    margin-right: 20px
-    font-size: 20px
+    position: absolute
+    top: 5vh
+    right: 1.5vw
+    font-size: 1.5vw
 
 
   .clock 
+    padding: 2vh
     color: white
     text-align: center
-    font-size: 20px
+    font-size: 1.5vw
 
 
   .bottom-right 
     position: absolute
-    bottom: 15px
-    right: 20px
+    bottom: 1vh
+    right: 1.5vw
+    font-size: 1vw
 
   .social
-    font-size: 20px
+    font-size: 1.5vw
     color: white
 
   .aparat
-    width: 20px
+    width: 1.5vw
 
   .fa-youtube
     color: darkred
 
+.bgimg 
+  background-image: url('../img/aka.jpg')
+  min-height: 100%
+  background-position: center
+  background-size: cover
 
 #pay
   height: 100%
@@ -68,19 +85,17 @@ html
 
   .date 
     color: white
-    text-align: right
-    margin-right: 20px
-    font-size: 20px
-    font-weight: bold
+    position: absolute
+    top: 5vh
+    right: 1.5vw
+    font-size: 1.5vw
 
-
-  
 
   .clock 
+    padding: 2vh
     color: white
     text-align: center
-    font-size: 20px
-
+    font-size: 1.5vw
 
   .bottom-right 
     position: absolute
@@ -112,3 +127,131 @@ html
       text-align: left
       padding-left: 3vw
       color: rgb(3, 67, 21)  
+
+// W3 ----------------------------------
+.w3-display-container 
+  position: relative
+
+.w3-animate-opacity 
+  animation: opac 0.8s
+
+.w3-text-white,
+.w3-hover-text-white:hover 
+  color: #fff
+
+
+.w3-display-middle
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%,-50%)
+  -ms-transform: translate(-50%,-50%)
+
+.w3-jumbo
+  font-size: 4vw
+  font-weight: normal
+  margin: 0
+
+.w3-animate-top
+  position: relative
+  animation: animatetop 0.4s
+
+.w3-border-grey
+  margin-top: 1.5vh
+  font-size: 1.3vw
+  border: 0.01vh solid #9e9e9e
+  width: 50%
+
+.w3-center
+  margin: 0
+  padding: 0
+  text-align: center
+  font-size: 1.3vw
+
+// start side nav -----------------------
+
+.sidenav 
+  height: 100%
+  width: 0
+  position: fixed
+  z-index: 1
+  top: 0
+  left: 0
+  background-color: #111
+  overflow-x: hidden
+  transition: 0.5s
+  padding-top: 10vh
+
+
+.sidenav a 
+  padding: 1vh .1vw 1vh 1.6vw
+  text-decoration: none
+  font-size: 1.2vw
+  color: #818181
+  display: block
+  transition: 0.3s
+
+
+.sidenav a:hover 
+  color: #f1f1f1
+
+.sidenav .closebtn 
+  position: absolute
+  top: 0
+  right: 1vw
+  font-size: 2vw
+
+// end side nav -----------------------
+#main
+  transition: margin-left .5s
+
+
+.logo
+  position: absolute
+  top: 4vh
+  left: 1.5vw
+  label
+    display: flex
+    justify-content: center
+    align-items: center
+    aspect-ratio: 1
+    width: min(8vh, 8vw)
+    height: min(8vh, 8vw) 
+    aspect-ratio: 3.7
+    font-size: min(5vh,5vw)
+    background-color: white
+    box-sizing: border-box
+    text-align: center
+    font-size: 3.5vh
+    font-weight: bold
+    color: black
+    border: 1vh solid #000000
+    border-radius: 50%
+    outline: 1vh black solid
+    outline-offset: -1vh
+    box-shadow: 0 0 1vh .5vh rgba(255, 0, 0, 0.733)
+
+
+
+    &:hover 
+      outline: 1vh #aaa8a8 solid
+      box-shadow: 0 0 1vh .5vh rgb(0, 85, 7)
+      cursor: crosshair
+      
+
+#gungi
+  label
+    width: 40px
+    height: 40px
+    box-sizing: border-box
+    text-align: center
+    line-height: 40px
+    font-size: 20px
+    margin-left: 10px
+    font-weight: bold
+    color: white
+    border: 1px solid white
+    border-radius: 20px
+    outline: 5px white solid
+    outline-offset: -5px
+
