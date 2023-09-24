@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#FFFFFF" />
+  <title>Gungi</title>
+
+  <link rel="icon" href="./assets/favicon-a6ddb3a5.svg" type="image/gif">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  
+  <style>
+    #nav {
+      margin-left: 20px;
+      transition: margin-left .5s;
+    }
+
+    body.landscape {
+      transform-origin: center center;
+      transform: rotate(90deg);
+      /* Adjust other styles as needed */
+      width: 100vh;
+      /* Set the width and height to match the rotated content */
+      height: 100vw;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
+  <script type="module" crossorigin src="./assets/main-3e874e1a.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/_commonjsHelpers-a1841df3.js">
+  <link rel="stylesheet" href="./assets/index-e81c456e.css">
+</head>
+
+<body>
+
+  <nav>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn">&times;</a>
+      <label id="new_game">New Game</label>
+      <label id="leave_game">Leave The Game</label>
+      <label id="save">Save</label>
+      <label for="jsonfile" id="load">Load</label>
+      <input hidden id="jsonfile" type="file">
+      <a href="./about.html" target="_blank">How to Play</a>
+      <a href="https://picinfiniti.net/" target="_blank">About</a>
+
+    </div>
+  </nav>
+  <container>
+
+    <arena>
+      <div class="top"></div>
+      <div class="middle">
+        <div class="left"></div>
+        <div id="fake"></div>
+        <div id="board"></div>
+        <div class="right"></div>
+        <div id="result">
+          <label type="text" id="r-0" name="0">Check Mate!!!
+          </label>
+          <label id="r-1" type="text" name="帥">帥</label>
+          <label type="text" id="r-2">
+            <span>Black</span>&nbsp;Wins...
+          </label>
+        </div>
+      </div>
+      <div class="bottom"></div>
+
+    </arena>
+
+    <info>
+      <div class="boarder-bottom" id="status">
+        <div id="PHASE">
+          <h3>Draft Phase</h3>
+          <setting style="cursor:pointer">
+            ⚙
+          </setting>
+
+        </div>
+        <div class="status">
+          <label id="PB" type="text" name="帥">帥</label>
+          <button id="ReadyButton" type="button">Ready</button>
+          <label id="PW" type="text" name="帥">帥</label>
+        </div>
+      </div>
+
+
+      <div class="boarder-bottom" id="tower_details">
+        <div class="tower">
+          <div id="tower" dcr="pagoda">塔</div>
+
+          <div name="fake">
+            <label class="fake boarder" type="text">0</label>
+            <label class="fake boarder" type="text">1</label>
+            <label class="fake boarder" type="text">2</label>
+          </div>
+
+          <div name="board">
+            <label class="tier boarder" type="text" id="t-0" name="0">0</label>
+            <label class="tier boarder" type="text" id="t-1" name="1">1</label>
+            <label class="tier boarder" type="text" id="t-2" name="2">2</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="boarder-bottom" id="black_stockpile">
+        <h3>Black Stockpile</h3>
+        <span name="pile">
+          <label class="stockpile boarder" type="text" id="bs-帥" name="帥" dcr="marshal">帥</label>
+          <label class="stockpile boarder" type="text" id="bs-兵" name="兵" dcr="pawn">兵</label>
+          <label class="stockpile boarder" type="text" id="bs-忍" name="忍" dcr="spy">忍</label>
+          <label class="stockpile boarder" type="text" id="bs-砲" name="砲" dcr="cannon">砲</label>
+          <label class="stockpile boarder" type="text" id="bs-砦" name="砦" dcr="fortress">砦</label>
+          <label class="stockpile boarder" type="text" id="bs-侍" name="侍" dcr="samurai">侍</label>
+          <label class="stockpile boarder" type="text" id="bs-謀" name="謀" dcr="captain">謀</label>
+          <label class="stockpile boarder" type="text" id="bs-筒" name="筒" dcr="musketeer">筒</label>
+          <label class="stockpile boarder" type="text" id="bs-馬" name="馬" dcr="knight">馬</label>
+          <label class="stockpile boarder" type="text" id="bs-弓" name="弓" dcr="archer">弓</label>
+          <label class="stockpile boarder" type="text" id="bs-大" name="大" dcr="general">大</label>
+          <label class="stockpile boarder" type="text" id="bs-中" name="中" dcr="lieutenant">中</label>
+          <label class="stockpile boarder" type="text" id="bs-小" name="小" dcr="minor_general">小</label>
+        </span>
+        <span class="army">
+          <label class='tooltip'>
+            Marshal
+          </label>
+          <div id='b-army'>
+            <label>army size:</label>
+            <span id='as-b'>0</span>
+          </div>
+        </span>
+      </div>
+
+      <div id="white_stockpile">
+        <h3>White Stockpile</h3>
+        <span name="pile">
+          <label class="stockpile boarder" type="text" id="ws-帥" name="帥" dcr="marshal">帥</label>
+          <label class="stockpile boarder" type="text" id="ws-兵" name="兵" dcr="pawn">兵</label>
+          <label class="stockpile boarder" type="text" id="ws-忍" name="忍" dcr="spy">忍</label>
+          <label class="stockpile boarder" type="text" id="ws-砲" name="砲" dcr="cannon">砲</label>
+          <label class="stockpile boarder" type="text" id="ws-砦" name="砦" dcr="fortress">砦</label>
+          <label class="stockpile boarder" type="text" id="ws-侍" name="侍" dcr="samurai">侍</label>
+          <label class="stockpile boarder" type="text" id="ws-謀" name="謀" dcr="captain">謀</label>
+          <label class="stockpile boarder" type="text" id="ws-筒" name="筒" dcr="musketeer">筒</label>
+          <label class="stockpile boarder" type="text" id="ws-馬" name="馬" dcr="knight">馬</label>
+          <label class="stockpile boarder" type="text" id="ws-弓" name="弓" dcr="archer">弓</label>
+          <label class="stockpile boarder" type="text" id="ws-大" name="大" dcr="general">大</label>
+          <label class="stockpile boarder" type="text" id="ws-中" name="中" dcr="lieutenant">中</label>
+          <label class="stockpile boarder" type="text" id="ws-小" name="小" dcr="minor_general">小</label>
+        </span>
+        <span class="army">
+          <label class='tooltip'>
+            Marshal
+          </label>
+          <div id='w-army'>
+            <label>army size:</label>
+            <span id='as-w'>0</span>
+          </div>
+        </span>
+      </div>
+
+      <div id="war">
+        <div type="button" id="Attack">Attack</div>
+        <div type="button" id="Stack">Stack</div>
+      </div>
+
+      </div>
+
+    </info>
+
+    <Capture>
+      <div class="r1">
+        <h2>死</h2>
+      </div>
+      <div class="r2">
+        <div id="black_Captured">
+          <h3>黑</h3>
+          <div name="pile">
+            <!-- <label class="captured boarder" type="text" id="bc-帥" name="帥">帥</label> -->
+            <label class="captured boarder" type="text" id="bc-兵" name="兵">兵</label>
+            <label class="captured boarder" type="text" id="bc-忍" name="忍">忍</label>
+            <label class="captured boarder" type="text" id="bc-砲" name="砲">砲</label>
+            <label class="captured boarder" type="text" id="bc-砦" name="砦">砦</label>
+            <label class="captured boarder" type="text" id="bc-侍" name="侍">侍</label>
+            <label class="captured boarder" type="text" id="bc-謀" name="謀">謀</label>
+            <label class="captured boarder" type="text" id="bc-筒" name="筒">筒</label>
+            <label class="captured boarder" type="text" id="bc-馬" name="馬">馬</label>
+            <label class="captured boarder" type="text" id="bc-弓" name="弓">弓</label>
+            <label class="captured boarder" type="text" id="bc-大" name="大">大</label>
+            <label class="captured boarder" type="text" id="bc-中" name="中">中</label>
+            <label class="captured boarder" type="text" id="bc-小" name="小">小</label>
+          </div>
+        </div>
+
+        <!-- <line></line> -->
+
+        <div id="white_Captured">
+          <h3>白</h3>
+          <div name="pile">
+            <!-- <label class="captured boarder" type="text" id="wc-帥" name="帥">帥</label> -->
+            <label class="captured boarder" type="text" id="wc-兵" name="兵">兵</label>
+            <label class="captured boarder" type="text" id="wc-忍" name="忍">忍</label>
+            <label class="captured boarder" type="text" id="wc-砲" name="砲">砲</label>
+            <label class="captured boarder" type="text" id="wc-砦" name="砦">砦</label>
+            <label class="captured boarder" type="text" id="wc-侍" name="侍">侍</label>
+            <label class="captured boarder" type="text" id="wc-謀" name="謀">謀</label>
+            <label class="captured boarder" type="text" id="wc-筒" name="筒">筒</label>
+            <label class="captured boarder" type="text" id="wc-馬" name="馬">馬</label>
+            <label class="captured boarder" type="text" id="wc-弓" name="弓">弓</label>
+            <label class="captured boarder" type="text" id="wc-大" name="大">大</label>
+            <label class="captured boarder" type="text" id="wc-中" name="中">中</label>
+            <label class="captured boarder" type="text" id="wc-小" name="小">小</label>
+          </div>
+        </div>
+      </div>
+    </Capture>
+
+  </container>
+
+  <footer>
+    <div>
+      <p>.Powered by <a href="http://picinfiniti.net/" target="blank">PicInfiniti.</a></p>
+    </div>
+  </footer>
+
+
+  <div class="chat-box">
+    <div class="c1">
+      <div class="chat-messages" contenteditable="false" id="message-box">
+        <div class="form">
+          <h3 class="title">What's your nickname?</h3>
+          <input class="usernameInput" type="text" maxlength="8" />
+        </div>
+        <ul dcr="message"></ul>
+      </div>
+      <div class="chat-input-container">
+        <unicode-emoji-picker version="15.0" default-group="search" filters-position="left"></unicode-emoji-picker>
+        <button class="emoji-button">😀</button>
+        <input type="text" class="chat-input" id="message-input" placeholder="Type your message">
+
+        <button class="chat-send">Send</button>
+      </div>
+    </div>
+    <div class="c2">
+      <peers>
+        <h4>Online</h4>
+        <peer></peer>
+      </peers>
+    </div>
+
+  </div>
+</body>
+<script>
+  $(".chat-box").draggable({
+    containment: "body",
+    scroll: false
+  });
+
+  $(".chat-box").resizable({
+    maxWidth: 1000,
+    minWidth: 650,
+    aspectRatio: 7 / 3,
+    handles: 'ne, n, e, s, w, sw, nw',
+    resize: function (event, ui) {
+      $('.chat-messages').css({
+        'height': `${ui.size.height-65}px`
+      })
+
+      $('.chat-box .form h3').css("font-size", `${ui.size.width / 35}pt`);
+      $('.chat-box .form .usernameInput').css("font-size", `${ui.size.width / 46.5}pt`)
+      console.log($('.chat-box .form h3').css("font-size"), $('.chat-box .form .usernameInput').css("font-size"))
+    }
+
+  });
+</script>
+
+</html>
