@@ -61,7 +61,7 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  background-image: url("../img/aka.jpg");
+  background-image: url("../img/abc.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -75,13 +75,17 @@ body {
   width: 30%;
   text-align: right;
   color: white;
+  font-weight: bold;
   font-size: 1.5vw;
+  text-shadow: 1px 1px 2px rgb(255, 119, 0), 0 0 1em rgb(255, 119, 0), 0 0 0.2em rgb(255, 119, 0);
 }
 #main .content .header .clock {
   width: 30%;
   text-align: center;
   color: white;
+  font-weight: bold;
   font-size: 1.5vw;
+  text-shadow: 1px 1px 2px rgb(255, 119, 0), 0 0 1em rgb(255, 119, 0), 0 0 0.2em rgb(255, 119, 0);
 }
 #main .content .header .logo {
   width: 30%;
@@ -115,31 +119,39 @@ body {
 #main .content .middle {
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   z-index: 1;
+  margin: 50px;
 }
 #main .content .middle * {
   margin: 10px;
   color: white;
 }
-#main .content .middle div {
+#main .content .middle .titr {
+  width: 40vw;
+  height: auto;
+  background-color: rgba(235, 235, 235, 0.85);
+  border-radius: 40px 5px 40px 5px;
+  padding: 20px;
+  -webkit-box-shadow: 0px 0px 5px 5px rgba(255, 119, 0, 0.576);
+  -webkit-box-shadow-box-shadow: 0px 0px 5px 5px rgba(255, 119, 0, 0.576);
+}
+#main .content .middle .titr * {
+  color: black;
+}
+#main .content .middle .titr h3:nth-child(3) {
+  text-align: left;
+  padding-left: 3vw;
+  padding-top: 20px;
+  color: #034315;
+}
+#main .content .middle div:first-child {
+  line-height: 1.5;
+}
+#main .content .middle div:nth-child(2) {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-#main .content .middle div h1 {
-  font-size: 4vw;
-  font-weight: normal;
-  font-family: "Raleway", sans-serif;
-}
-#main .content .middle div hr {
-  width: 50%;
-}
-#main .content .middle div p {
-  font-size: 1.3vw;
 }
 #main .content footer {
   padding: 10px;
@@ -168,4 +180,4 @@ body {
   width: 1.5vw;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=pay.css.map */
