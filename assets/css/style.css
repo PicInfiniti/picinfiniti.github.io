@@ -31,8 +31,7 @@ body {
 }
 #main .sidenav {
   height: 100%;
-  width: 15vw;
-  max-width: 250px;
+  width: max(15vw, 15vh);
   z-index: 1;
   top: 0;
   left: 0;
@@ -98,7 +97,7 @@ body {
   background-color: white;
   box-sizing: border-box;
   text-align: center;
-  font-size: 4vh;
+  font-size: min(4vh, 4vw);
   font-weight: bold;
   color: black;
   border: 1vh solid #000000;
