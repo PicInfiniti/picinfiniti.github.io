@@ -1,0 +1,1 @@
+import{c as t,o as c}from"./utils-1O31D3fn.js";const e=document;e.addEventListener("DOMContentLoaded",function(){e.querySelectorAll(".closebtn").forEach(function(o){o.addEventListener("click",function(){t()})});const n=e.querySelector(".content .header .logo");n&&n.addEventListener("click",function(){c("mySidenav")})});
