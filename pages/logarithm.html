@@ -4,6 +4,22 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Logarithm Formula Cheat Sheet</title>
+
+    <!-- KaTeX (added; everything else unchanged) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+      onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false}],throwOnError:false});"
+    ></script>
+
     <style>
       :root {
         --bg: #0b1220;
@@ -54,7 +70,7 @@
       }
 
       .wrap {
-        max-width: 1050px;
+        max-width: 1500px;
         margin: 0 auto;
       }
 
@@ -209,7 +225,7 @@
 
       .formula {
         font-family: var(--mono);
-        font-size: 13px;
+        font-size: 18px;
         padding: 10px 12px;
         border-radius: 12px;
         background: linear-gradient(
@@ -286,7 +302,7 @@
 
       .rule {
         font-family: var(--mono);
-        font-size: 13px;
+        font-size: 16px;
         white-space: nowrap;
       }
 
@@ -393,8 +409,8 @@
           <p class="subtitle">
             Clean, printable log rules + key identities + quick examples.
             (Notation:
-            <span style="font-family: var(--mono)">log_b(a)</span> means “log
-            base <b>b</b> of <b>a</b>”.)
+            <span style="font-family: var(--mono)">\( \log_b(a) \)</span> means
+            “log base <b>b</b> of <b>a</b>”.)
           </p>
           <div class="badge-row">
             <span class="badge"><span class="dot p"></span>Definition</span>
@@ -403,12 +419,14 @@
             <span class="badge"
               >Common log:
               <span style="font-family: var(--mono)"
-                >log(x)=log₁₀(x)</span
+                >\( \log(x)=\log_{10}(x) \)</span
               ></span
             >
             <span class="badge"
               >Natural log:
-              <span style="font-family: var(--mono)">ln(x)=logₑ(x)</span></span
+              <span style="font-family: var(--mono)"
+                >\( \ln(x)=\log_{e}(x) \)</span
+              ></span
             >
           </div>
         </div>
@@ -434,20 +452,18 @@
                 </div>
               </div>
               <div class="formula">
-                log<sub>b</sub>(a) = c <span class="muted">⇔</span> b<sup
-                  >c</sup
-                >
-                = a
+                \( \log_{b}(a) = c \;\Leftrightarrow\; b^{c} = a \)
               </div>
             </div>
 
             <div class="mini">
-              Conditions: <b>b &gt; 0</b>, <b>b ≠ 1</b>, and <b>a &gt; 0</b>.
+              Conditions: <b>\(b &gt; 0\)</b>, <b>\(b \ne 1\)</b>, and
+              <b>\(a &gt; 0\)</b>.
             </div>
 
             <div class="callout danger" style="margin-top: 12px">
               <b>Domain reminder:</b> the argument must be positive →
-              <span style="font-family: var(--mono)">a &gt; 0</span>.
+              <span style="font-family: var(--mono)">\( a &gt; 0 \)</span>.
             </div>
           </div>
         </article>
@@ -466,7 +482,7 @@
                   <div class="desc">Turn multiplication into addition.</div>
                 </div>
                 <div class="formula">
-                  log<sub>b</sub>(xy) = log<sub>b</sub>(x) + log<sub>b</sub>(y)
+                  \( \log_{b}(xy) = \log_{b}(x) + \log_{b}(y) \)
                 </div>
               </div>
 
@@ -476,7 +492,8 @@
                   <div class="desc">Turn division into subtraction.</div>
                 </div>
                 <div class="formula">
-                  log<sub>b</sub>(x/y) = log<sub>b</sub>(x) − log<sub>b</sub>(y)
+                  \( \log_{b}\!\left(\frac{x}{y}\right) = \log_{b}(x) -
+                  \log_{b}(y) \)
                 </div>
               </div>
 
@@ -486,7 +503,7 @@
                   <div class="desc">Bring exponents to the front.</div>
                 </div>
                 <div class="formula">
-                  log<sub>b</sub>(x<sup>r</sup>) = r · log<sub>b</sub>(x)
+                  \( \log_{b}(x^{r}) = r \cdot \log_{b}(x) \)
                 </div>
               </div>
 
@@ -498,8 +515,7 @@
                   <div class="desc">Two must-know results.</div>
                 </div>
                 <div class="formula">
-                  log<sub>b</sub>(1)=0 &nbsp;&nbsp;•&nbsp;&nbsp;
-                  log<sub>b</sub>(b)=1
+                  \( \log_{b}(1)=0 \;\;\bullet\;\; \log_{b}(b)=1 \)
                 </div>
               </div>
             </div>
@@ -519,7 +535,7 @@
                 <div class="desc">Convert to any base (often ln).</div>
               </div>
               <div class="formula">
-                log<sub>b</sub>(a) = log<sub>c</sub>(a) / log<sub>c</sub>(b)
+                \( \log_{b}(a) = \frac{\log_{c}(a)}{\log_{c}(b)} \)
               </div>
             </div>
 
@@ -530,7 +546,9 @@
                 </div>
                 <div class="desc">Most common on scientific calculators.</div>
               </div>
-              <div class="formula">log<sub>b</sub>(a) = ln(a) / ln(b)</div>
+              <div class="formula">
+                \( \log_{b}(a) = \frac{\ln(a)}{\ln(b)} \)
+              </div>
             </div>
           </div>
         </article>
@@ -547,7 +565,7 @@
                 <div class="name"><span class="dot p"></span>Inverse #1</div>
                 <div class="desc">Exponent + matching log cancel.</div>
               </div>
-              <div class="formula">b<sup>log<sub>b</sub>(x)</sup> = x</div>
+              <div class="formula">\( b^{\log_{b}(x)} = x \)</div>
             </div>
 
             <div class="k" style="margin-top: 12px">
@@ -555,12 +573,12 @@
                 <div class="name"><span class="dot p"></span>Inverse #2</div>
                 <div class="desc">Log + matching exponent cancel.</div>
               </div>
-              <div class="formula">log<sub>b</sub>(b<sup>x</sup>) = x</div>
+              <div class="formula">\( \log_{b}\!\left(b^{x}\right) = x \)</div>
             </div>
 
             <div class="callout" style="margin-top: 12px">
               <b>Tip:</b> Always keep the base the same when canceling (same
-              <span style="font-family: var(--mono)">b</span>).
+              <span style="font-family: var(--mono)">\(b\)</span>).
             </div>
           </div>
         </article>
@@ -578,9 +596,7 @@
                 <div class="desc">Convert log to exponential form.</div>
               </div>
               <div class="formula">
-                log<sub>2</sub>(x)=3
-                <span class="muted">⇒</span> 2<sup>3</sup>=x
-                <span class="muted">⇒</span> x=8
+                \( \log_{2}(x)=3 \Rightarrow 2^{3}=x \Rightarrow x=8 \)
               </div>
             </div>
 
@@ -590,15 +606,14 @@
                 <div class="desc">Combine logs, then convert.</div>
               </div>
               <div class="formula">
-                log(x)+log(2)=1 <span class="muted">⇒</span> log(2x)=1
-                <span class="muted">⇒</span> 10<sup>1</sup>=2x
-                <span class="muted">⇒</span> x=5
+                \( \log(x)+\log(2)=1 \Rightarrow \log(2x)=1 \Rightarrow
+                10^{1}=2x \Rightarrow x=5 \)
               </div>
             </div>
 
             <div class="mini">
               Always check the domain after solving (e.g., ensure
-              <span style="font-family: var(--mono)">x &gt; 0</span> where
+              <span style="font-family: var(--mono)">\(x &gt; 0\)</span> where
               required).
             </div>
           </div>
@@ -622,38 +637,38 @@
                 <tr>
                   <td>Product</td>
                   <td class="rule">
-                    log<sub>b</sub>(xy) = log<sub>b</sub>(x) +
-                    log<sub>b</sub>(y)
+                    \( \log_{b}(xy) = \log_{b}(x) + \log_{b}(y) \)
                   </td>
                 </tr>
                 <tr>
                   <td>Quotient</td>
                   <td class="rule">
-                    log<sub>b</sub>(x/y) = log<sub>b</sub>(x) −
-                    log<sub>b</sub>(y)
+                    \( \log_{b}\!\left(\frac{x}{y}\right) = \log_{b}(x) -
+                    \log_{b}(y) \)
                   </td>
                 </tr>
                 <tr>
                   <td>Power</td>
                   <td class="rule">
-                    log<sub>b</sub>(x<sup>r</sup>) = r · log<sub>b</sub>(x)
+                    \( \log_{b}(x^{r}) = r \cdot \log_{b}(x) \)
                   </td>
                 </tr>
                 <tr>
                   <td>Change of base</td>
-                  <td class="rule">log<sub>b</sub>(a) = ln(a) / ln(b)</td>
+                  <td class="rule">
+                    \( \log_{b}(a) = \frac{\ln(a)}{\ln(b)} \)
+                  </td>
                 </tr>
                 <tr>
                   <td>Special values</td>
                   <td class="rule">
-                    log<sub>b</sub>(1)=0 • log<sub>b</sub>(b)=1
+                    \( \log_{b}(1)=0 \;\bullet\; \log_{b}(b)=1 \)
                   </td>
                 </tr>
                 <tr>
                   <td>Inverse</td>
                   <td class="rule">
-                    b<sup>log<sub>b</sub>(x)</sup> = x •
-                    log<sub>b</sub>(b<sup>x</sup>) = x
+                    \( b^{\log_{b}(x)} = x \;\bullet\; \log_{b}(b^{x}) = x \)
                   </td>
                 </tr>
               </tbody>
@@ -665,7 +680,8 @@
       <footer>
         <div>Made for quick study — works great when printed.</div>
         <div style="font-family: var(--mono)">
-          log rules • domain: argument &gt; 0 • base: b &gt; 0, b ≠ 1
+          log rules • domain: \( \text{argument} &gt; 0 \) • base: \( b &gt; 0
+          \), \( b \ne 1 \)
         </div>
       </footer>
     </div>
