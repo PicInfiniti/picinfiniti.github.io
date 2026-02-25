@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Logarithm Formula Cheat Sheet</title>
+    <style>
+      :root {
+        --bg: #0b1220;
+        --card: rgba(255, 255, 255, 0.06);
+        --card-2: rgba(255, 255, 255, 0.09);
+        --text: rgba(255, 255, 255, 0.92);
+        --muted: rgba(255, 255, 255, 0.68);
+        --line: rgba(255, 255, 255, 0.12);
+        --accent: #7c3aed; /* purple */
+        --accent2: #22c55e; /* green */
+        --accent3: #06b6d4; /* cyan */
+        --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+        --radius: 18px;
+        --mono:
+          ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", "Courier New", monospace;
+        --sans:
+          ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+          Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: var(--sans);
+        color: var(--text);
+        background:
+          radial-gradient(
+            1200px 600px at 20% 10%,
+            rgba(124, 58, 237, 0.35),
+            transparent 55%
+          ),
+          radial-gradient(
+            900px 500px at 80% 0%,
+            rgba(34, 197, 94, 0.22),
+            transparent 52%
+          ),
+          radial-gradient(
+            900px 700px at 70% 90%,
+            rgba(6, 182, 212, 0.18),
+            transparent 55%
+          ),
+          linear-gradient(180deg, #060a14, var(--bg));
+        min-height: 100vh;
+        padding: 32px 18px 60px;
+      }
+
+      .wrap {
+        max-width: 1050px;
+        margin: 0 auto;
+      }
+
+      header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 18px;
+      }
+
+      .title {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(26px, 3.2vw, 44px);
+        letter-spacing: -0.02em;
+        line-height: 1.05;
+      }
+
+      .subtitle {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14.5px;
+        line-height: 1.5;
+        max-width: 70ch;
+      }
+
+      .badge-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 6px;
+      }
+
+      .badge {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.86);
+        padding: 7px 10px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--accent3);
+        box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.15);
+      }
+      .dot.p {
+        background: var(--accent);
+        box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.15);
+      }
+      .dot.g {
+        background: var(--accent2);
+        box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.15);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 14px;
+        margin-top: 16px;
+      }
+
+      .card {
+        grid-column: span 12;
+        background: linear-gradient(
+          180deg,
+          var(--card),
+          rgba(255, 255, 255, 0.04)
+        );
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .card-head {
+        padding: 16px 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        border-bottom: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .card-head h2 {
+        margin: 0;
+        font-size: 16px;
+        letter-spacing: 0.01em;
+      }
+
+      .chip {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.8);
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .card-body {
+        padding: 16px 18px 18px;
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .k {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 14px;
+        padding: 12px 12px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.045);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .k .name {
+        font-weight: 650;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.88);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        white-space: nowrap;
+      }
+
+      .k .desc {
+        color: var(--muted);
+        font-size: 12.5px;
+        line-height: 1.4;
+        margin-top: 6px;
+      }
+
+      .formula {
+        font-family: var(--mono);
+        font-size: 13px;
+        padding: 10px 12px;
+        border-radius: 12px;
+        background: linear-gradient(
+          180deg,
+          rgba(124, 58, 237, 0.2),
+          rgba(255, 255, 255, 0.03)
+        );
+        border: 1px solid rgba(124, 58, 237, 0.28);
+        color: rgba(255, 255, 255, 0.92);
+        overflow: auto;
+        max-width: 100%;
+      }
+
+      .formula .muted {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .mini {
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 10px;
+        line-height: 1.5;
+      }
+
+      .callout {
+        padding: 12px 12px;
+        border-radius: 14px;
+        border: 1px solid rgba(34, 197, 94, 0.25);
+        background: linear-gradient(
+          180deg,
+          rgba(34, 197, 94, 0.16),
+          rgba(255, 255, 255, 0.03)
+        );
+      }
+      .callout b {
+        color: rgba(255, 255, 255, 0.92);
+      }
+
+      .danger {
+        border: 1px solid rgba(239, 68, 68, 0.28);
+        background: linear-gradient(
+          180deg,
+          rgba(239, 68, 68, 0.14),
+          rgba(255, 255, 255, 0.03)
+        );
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        overflow: hidden;
+        border-radius: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.03);
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 12px 12px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 13px;
+        vertical-align: top;
+      }
+      th {
+        font-size: 12px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.72);
+        background: rgba(255, 255, 255, 0.04);
+      }
+      tr:last-child td {
+        border-bottom: none;
+      }
+
+      .rule {
+        font-family: var(--mono);
+        font-size: 13px;
+        white-space: nowrap;
+      }
+
+      footer {
+        margin-top: 18px;
+        color: rgba(255, 255, 255, 0.62);
+        font-size: 12.5px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .print {
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: rgba(255, 255, 255, 0.06);
+        color: rgba(255, 255, 255, 0.88);
+        padding: 10px 12px;
+        border-radius: 12px;
+        cursor: pointer;
+        font-weight: 650;
+        letter-spacing: 0.01em;
+      }
+      .print:hover {
+        background: rgba(255, 255, 255, 0.09);
+      }
+
+      /* responsive layout */
+      @media (min-width: 860px) {
+        .card.definition {
+          grid-column: span 7;
+        }
+        .card.laws {
+          grid-column: span 5;
+        }
+        .card.changebase {
+          grid-column: span 6;
+        }
+        .card.identities {
+          grid-column: span 6;
+        }
+        .card.solve {
+          grid-column: span 7;
+        }
+        .card.table {
+          grid-column: span 5;
+        }
+        .two-col {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media print {
+        body {
+          background: #fff;
+          color: #111;
+          padding: 0;
+        }
+        .badge,
+        .print {
+          display: none !important;
+        }
+        .card {
+          box-shadow: none;
+          border: 1px solid #ddd;
+          background: #fff;
+        }
+        .card-head {
+          background: #f7f7f7;
+        }
+        .formula {
+          border-color: #ddd;
+          background: #f8f8ff;
+          color: #111;
+        }
+        table {
+          border-color: #ddd;
+        }
+        th {
+          background: #f7f7f7;
+          color: #333;
+        }
+        .callout {
+          background: #f6fffa;
+          border-color: #b7f7d0;
+        }
+        .danger {
+          background: #fff5f5;
+          border-color: #ffc9c9;
+        }
+        footer {
+          color: #444;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header>
+        <div class="title">
+          <h1>Logarithm Formula Cheat Sheet</h1>
+          <p class="subtitle">
+            Clean, printable log rules + key identities + quick examples.
+            (Notation:
+            <span style="font-family: var(--mono)">log_b(a)</span> means “log
+            base <b>b</b> of <b>a</b>”.)
+          </p>
+          <div class="badge-row">
+            <span class="badge"><span class="dot p"></span>Definition</span>
+            <span class="badge"><span class="dot g"></span>Laws</span>
+            <span class="badge"><span class="dot"></span>Change of base</span>
+            <span class="badge"
+              >Common log:
+              <span style="font-family: var(--mono)"
+                >log(x)=log₁₀(x)</span
+              ></span
+            >
+            <span class="badge"
+              >Natural log:
+              <span style="font-family: var(--mono)">ln(x)=logₑ(x)</span></span
+            >
+          </div>
+        </div>
+
+        <button class="print" onclick="window.print()">Print / Save PDF</button>
+      </header>
+
+      <section class="grid">
+        <!-- Definition -->
+        <article class="card definition">
+          <div class="card-head">
+            <h2>1) Definition</h2>
+            <span class="chip">core idea</span>
+          </div>
+          <div class="card-body">
+            <div class="k">
+              <div>
+                <div class="name">
+                  <span class="dot p"></span>Log ↔ Exponential
+                </div>
+                <div class="desc">
+                  Convert logs to exponent form (and back).
+                </div>
+              </div>
+              <div class="formula">
+                log<sub>b</sub>(a) = c <span class="muted">⇔</span> b<sup
+                  >c</sup
+                >
+                = a
+              </div>
+            </div>
+
+            <div class="mini">
+              Conditions: <b>b &gt; 0</b>, <b>b ≠ 1</b>, and <b>a &gt; 0</b>.
+            </div>
+
+            <div class="callout danger" style="margin-top: 12px">
+              <b>Domain reminder:</b> the argument must be positive →
+              <span style="font-family: var(--mono)">a &gt; 0</span>.
+            </div>
+          </div>
+        </article>
+
+        <!-- Log laws -->
+        <article class="card laws">
+          <div class="card-head">
+            <h2>2) Log Laws</h2>
+            <span class="chip">simplify fast</span>
+          </div>
+          <div class="card-body">
+            <div class="two-col">
+              <div class="k">
+                <div>
+                  <div class="name"><span class="dot g"></span>Product</div>
+                  <div class="desc">Turn multiplication into addition.</div>
+                </div>
+                <div class="formula">
+                  log<sub>b</sub>(xy) = log<sub>b</sub>(x) + log<sub>b</sub>(y)
+                </div>
+              </div>
+
+              <div class="k">
+                <div>
+                  <div class="name"><span class="dot g"></span>Quotient</div>
+                  <div class="desc">Turn division into subtraction.</div>
+                </div>
+                <div class="formula">
+                  log<sub>b</sub>(x/y) = log<sub>b</sub>(x) − log<sub>b</sub>(y)
+                </div>
+              </div>
+
+              <div class="k">
+                <div>
+                  <div class="name"><span class="dot g"></span>Power</div>
+                  <div class="desc">Bring exponents to the front.</div>
+                </div>
+                <div class="formula">
+                  log<sub>b</sub>(x<sup>r</sup>) = r · log<sub>b</sub>(x)
+                </div>
+              </div>
+
+              <div class="k">
+                <div>
+                  <div class="name">
+                    <span class="dot g"></span>Special values
+                  </div>
+                  <div class="desc">Two must-know results.</div>
+                </div>
+                <div class="formula">
+                  log<sub>b</sub>(1)=0 &nbsp;&nbsp;•&nbsp;&nbsp;
+                  log<sub>b</sub>(b)=1
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Change of base -->
+        <article class="card changebase">
+          <div class="card-head">
+            <h2>3) Change of Base</h2>
+            <span class="chip">calculator-friendly</span>
+          </div>
+          <div class="card-body">
+            <div class="k">
+              <div>
+                <div class="name"><span class="dot"></span>General form</div>
+                <div class="desc">Convert to any base (often ln).</div>
+              </div>
+              <div class="formula">
+                log<sub>b</sub>(a) = log<sub>c</sub>(a) / log<sub>c</sub>(b)
+              </div>
+            </div>
+
+            <div class="k" style="margin-top: 12px">
+              <div>
+                <div class="name">
+                  <span class="dot"></span>Using natural log
+                </div>
+                <div class="desc">Most common on scientific calculators.</div>
+              </div>
+              <div class="formula">log<sub>b</sub>(a) = ln(a) / ln(b)</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Identities -->
+        <article class="card identities">
+          <div class="card-head">
+            <h2>4) Key Identities</h2>
+            <span class="chip">undo operations</span>
+          </div>
+          <div class="card-body">
+            <div class="k">
+              <div>
+                <div class="name"><span class="dot p"></span>Inverse #1</div>
+                <div class="desc">Exponent + matching log cancel.</div>
+              </div>
+              <div class="formula">b<sup>log<sub>b</sub>(x)</sup> = x</div>
+            </div>
+
+            <div class="k" style="margin-top: 12px">
+              <div>
+                <div class="name"><span class="dot p"></span>Inverse #2</div>
+                <div class="desc">Log + matching exponent cancel.</div>
+              </div>
+              <div class="formula">log<sub>b</sub>(b<sup>x</sup>) = x</div>
+            </div>
+
+            <div class="callout" style="margin-top: 12px">
+              <b>Tip:</b> Always keep the base the same when canceling (same
+              <span style="font-family: var(--mono)">b</span>).
+            </div>
+          </div>
+        </article>
+
+        <!-- Solving examples -->
+        <article class="card solve">
+          <div class="card-head">
+            <h2>5) Solving Quick Examples</h2>
+            <span class="chip">patterns</span>
+          </div>
+          <div class="card-body">
+            <div class="k">
+              <div>
+                <div class="name"><span class="dot g"></span>Example A</div>
+                <div class="desc">Convert log to exponential form.</div>
+              </div>
+              <div class="formula">
+                log<sub>2</sub>(x)=3
+                <span class="muted">⇒</span> 2<sup>3</sup>=x
+                <span class="muted">⇒</span> x=8
+              </div>
+            </div>
+
+            <div class="k" style="margin-top: 12px">
+              <div>
+                <div class="name"><span class="dot g"></span>Example B</div>
+                <div class="desc">Combine logs, then convert.</div>
+              </div>
+              <div class="formula">
+                log(x)+log(2)=1 <span class="muted">⇒</span> log(2x)=1
+                <span class="muted">⇒</span> 10<sup>1</sup>=2x
+                <span class="muted">⇒</span> x=5
+              </div>
+            </div>
+
+            <div class="mini">
+              Always check the domain after solving (e.g., ensure
+              <span style="font-family: var(--mono)">x &gt; 0</span> where
+              required).
+            </div>
+          </div>
+        </article>
+
+        <!-- Reference table -->
+        <article class="card table">
+          <div class="card-head">
+            <h2>6) Quick Reference</h2>
+            <span class="chip">at-a-glance</span>
+          </div>
+          <div class="card-body">
+            <table>
+              <thead>
+                <tr>
+                  <th>Rule</th>
+                  <th>Formula</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Product</td>
+                  <td class="rule">
+                    log<sub>b</sub>(xy) = log<sub>b</sub>(x) +
+                    log<sub>b</sub>(y)
+                  </td>
+                </tr>
+                <tr>
+                  <td>Quotient</td>
+                  <td class="rule">
+                    log<sub>b</sub>(x/y) = log<sub>b</sub>(x) −
+                    log<sub>b</sub>(y)
+                  </td>
+                </tr>
+                <tr>
+                  <td>Power</td>
+                  <td class="rule">
+                    log<sub>b</sub>(x<sup>r</sup>) = r · log<sub>b</sub>(x)
+                  </td>
+                </tr>
+                <tr>
+                  <td>Change of base</td>
+                  <td class="rule">log<sub>b</sub>(a) = ln(a) / ln(b)</td>
+                </tr>
+                <tr>
+                  <td>Special values</td>
+                  <td class="rule">
+                    log<sub>b</sub>(1)=0 • log<sub>b</sub>(b)=1
+                  </td>
+                </tr>
+                <tr>
+                  <td>Inverse</td>
+                  <td class="rule">
+                    b<sup>log<sub>b</sub>(x)</sup> = x •
+                    log<sub>b</sub>(b<sup>x</sup>) = x
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+
+      <footer>
+        <div>Made for quick study — works great when printed.</div>
+        <div style="font-family: var(--mono)">
+          log rules • domain: argument &gt; 0 • base: b &gt; 0, b ≠ 1
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
