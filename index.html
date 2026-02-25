@@ -1,106 +1,145 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<title>PicInfiniti</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PicInfiniti</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<!-- google Fonts -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <!-- google Fonts -->
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Raleway"
+  />
 
-<!-- icon pack-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="icon" href="/src/assets/img/blackjinja.png" type="image/gif">
+  <!-- icon pack-->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <link rel="icon" href="/src/assets/img/blackjinja.png" type="image/gif" />
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-176588609-1">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=UA-176588609-1"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag('js', new Date());
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-  gtag('config', 'UA-176588609-1');
-  
-</script>
-<script type="module" crossorigin src="/assets/main-xZdpuUMs.js"></script>
-<link rel="modulepreload" crossorigin href="/assets/utils-1O31D3fn.js">
-<link rel="stylesheet" crossorigin href="/assets/main-IyLaW4pn.css">
+    gtag("config", "UA-176588609-1");
+  </script>
+  <script type="module" crossorigin src="/assets/main-xZdpuUMs.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/utils-1O31D3fn.js">
+  <link rel="stylesheet" crossorigin href="/assets/main-IyLaW4pn.css">
 
-<body>
-  <div id="main">
-    <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn">&times;</a>
-      <a href="#">About</a>
-      <!-- <a href="/views/webrtc.html">WebRTC</a> -->
-      <a href="https://gungi.picinfiniti.net/" target="blank">Gungi <b style="font-size: min(3vh, 3vw);">帥</b></a>
-      <a href="https://chess.picinfiniti.net/" target="blank">Chess <span style="font-size: min(3vh, 3vw);">♞</span></a>
-      <a href="https://kriegspiel.picinfiniti.net/" target="blank">Kriegspiel <span style="font-size: min(3vh, 3vw);">♛</span></a>
-      <a href="https://graph.picinfiniti.net/" target="blank">Graph Studio</a>
-      <a href="https://www.chiark.greenend.org.uk/~sgtatham/puzzles/" target="blank">Games</a>
-      <!-- <a href="/views/manga.html" target="blank">Manga ♥</a> -->
-      <a href="#">Contact</a>
-    </div>
-
-    <div class="content">
-      <div class="header">
-        <div class="logo">
-          <label type="text" name="帥" onclick="openNav()">帥</label>
-        </div>
-
-        <div id="Clock" class="clock"></div>
-
-        <div class="date">
-          <span id='jdate'></span>
-        </div>
-
-      </div> 
-
-      <div class="middle">
-        <div>
-          <h1>We Develop EveryThing</h1>
-          <hr>
-          <p>Welcome to Wonderland</p>
-        </div>
+  <body>
+    <div id="main">
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn">&times;</a>
+        <a href="#">About</a>
+        <!-- <a href="/views/webrtc.html">WebRTC</a> -->
+        <a href="https://gungi.picinfiniti.net/" target="blank"
+          >Gungi <b style="font-size: min(3vh, 3vw)">帥</b></a
+        >
+        <a href="https://chess.picinfiniti.net/" target="blank"
+          >Chess <span style="font-size: min(3vh, 3vw)">♞</span></a
+        >
+        <a href="https://kriegspiel.picinfiniti.net/" target="blank"
+          >Kriegspiel <span style="font-size: min(3vh, 3vw)">♛</span></a
+        >
+        <a href="https://graph.picinfiniti.net/" target="blank">Graph Studio</a>
+        <a
+          href="https://www.chiark.greenend.org.uk/~sgtatham/puzzles/"
+          target="blank"
+          >Games</a
+        >
+        <!-- <a href="/views/manga.html" target="blank">Manga ♥</a> -->
+        <a href="#">Contact</a>
       </div>
 
-      <footer>
-        <div class="bottom-left">
-          <p>.Powered by <a href="http://picinfiniti.net/">PicInfiniti.</a></p>
+      <div class="content">
+        <div class="header">
+          <div class="logo">
+            <label type="text" name="帥" onclick="openNav()">帥</label>
+          </div>
+
+          <div id="Clock" class="clock"></div>
+
+          <div class="date">
+            <span id="jdate"></span>
+          </div>
         </div>
 
-        <div class="bottom-right">
-          <a data-toggle="tooltip" href="http://www.picinfiniti.ir/" title="Jinja"><img src="/icon/jinjaw.png"
-              class="aparat"></a>
-          <a data-toggle="tooltip" href="https://www.aparat.com/picinfiniti" title="Aparat"><img src="/icon/aparat.png"
-              class="aparat"></a>
-          <a data-toggle="tooltip" href="https://ponisha.ir/profile/picinfiniti" title="Ponisha"><img
-              src="/icon/ponisha.png" class="aparat"></a>
-          <a data-toggle="tooltip" href="https://www.youtube.com/picinfiniti" title="YouYube"><img
-              src="/icon/youtube.png" class="aparat"></a>
-          <a data-toggle="tooltip" href="https://www.instagram.com/picinfiniti/" title="Instagram"><img
-              src="/icon/instagram.png" class="aparat"></a>
-          <a data-toggle="tooltip" href="https://wa.me/message/4SJC3MRVFRCHB1" title="Whatsapp"><img
-              src="/icon/whatsapp.png" class="aparat"></a>
-          <a data-toggle="tooltip" href="https://t.me/picinfiniti" title="Telegram"><img src="/icon/telegram.png"
-              class="aparat"></a>
-          <a data-toggle="tooltip" href="/pages/pay.html" title="قدردانی"><img src="/icon/zarin.png"
-              class="aparat"></a>
+        <div class="middle">
+          <div>
+            <h1>We Develop EveryThing</h1>
+            <hr />
+            <p>Welcome to Wonderland</p>
+          </div>
         </div>
 
-      </footer>
+        <footer>
+          <div class="bottom-left">
+            <p>
+              .Powered by <a href="http://picinfiniti.net/">PicInfiniti.</a>
+            </p>
+          </div>
 
-
+          <div class="bottom-right">
+            <a
+              data-toggle="tooltip"
+              href="http://www.picinfiniti.ir/"
+              title="Jinja"
+              ><img src="/icon/jinjaw.png" class="aparat"
+            /></a>
+            <a
+              data-toggle="tooltip"
+              href="https://www.aparat.com/picinfiniti"
+              title="Aparat"
+              ><img src="/icon/aparat.png" class="aparat"
+            /></a>
+            <a
+              data-toggle="tooltip"
+              href="https://ponisha.ir/profile/picinfiniti"
+              title="Ponisha"
+              ><img src="/icon/ponisha.png" class="aparat"
+            /></a>
+            <a
+              data-toggle="tooltip"
+              href="https://www.youtube.com/picinfiniti"
+              title="YouYube"
+              ><img src="/icon/youtube.png" class="aparat"
+            /></a>
+            <a
+              data-toggle="tooltip"
+              href="https://www.instagram.com/picinfiniti/"
+              title="Instagram"
+              ><img src="/icon/instagram.png" class="aparat"
+            /></a>
+            <a
+              data-toggle="tooltip"
+              href="https://wa.me/message/4SJC3MRVFRCHB1"
+              title="Whatsapp"
+              ><img src="/icon/whatsapp.png" class="aparat"
+            /></a>
+            <a
+              data-toggle="tooltip"
+              href="https://t.me/picinfiniti"
+              title="Telegram"
+              ><img src="/icon/telegram.png" class="aparat"
+            /></a>
+            <a data-toggle="tooltip" href="/pages/pay.html" title="قدردانی"
+              ><img src="/icon/zarin.png" class="aparat"
+            /></a>
+          </div>
+        </footer>
+      </div>
     </div>
-  </div>
-
-</body>
-<script>
- </script>
-<script>
-
-</script>
-
+  </body>
+  <script></script>
+  <script></script>
 </html>
