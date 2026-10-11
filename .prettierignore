@@ -1,0 +1,11 @@
+dist/
+coverage/
+package-lock.json
+# Prettier does not support indented Sass.
+**/*.sass
+
+# Preserve third-party syntax-highlighting assets.
+static/
+
+# Preserve archived site data.
+src/assets/json/
