@@ -1,0 +1,1 @@
+import{t as e}from"./App-BO7M8LVd.js";new e({BASE_URL:`/`,DEV:!1,MODE:`production`,PROD:!0,SSR:!1}).init();
